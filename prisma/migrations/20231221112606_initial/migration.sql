@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "user_profile" ALTER COLUMN "password" SET DATA TYPE TEXT,
+ALTER COLUMN "createdAt" SET DATA TYPE TIMESTAMP(6);

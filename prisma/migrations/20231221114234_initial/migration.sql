@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "user_profile" ADD COLUMN     "createdAt" TIMESTAMP(6) NOT NULL DEFAULT CURRENT_TIMESTAMP;
