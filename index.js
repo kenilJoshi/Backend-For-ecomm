@@ -1,5 +1,5 @@
-const app = require('./app')
 require("dotenv").config();
+const app = require('./app')
 const {Pool} = require("pg")
 const cloudinary = require('cloudinary')
 const {pool} = require('./config/db')
