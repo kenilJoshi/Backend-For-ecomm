@@ -34,8 +34,8 @@ exports.signup = async(req, res) => {
             name: data.name,
             email: data.email,
             password: data.password,
-            picture_id: picture_id,
-            secureUrl: secureUrl
+            picture_id: 'kenil',
+            secureUrl: 'kenil'
         })
         // res.send(newUser)
         cookieToken(newUser, res)
