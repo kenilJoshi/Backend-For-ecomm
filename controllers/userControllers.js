@@ -9,7 +9,6 @@ exports.signup = async(req, res) => {
     let result
     // console.log(req);
     console.log(req.body);
-    // res.send("hii from usercontroller")
     // if(req.files){
     //     let file = req.files.photo
     //     result = await cloudinary.uploader.upload(file.tempFilePath, {
@@ -24,28 +23,26 @@ exports.signup = async(req, res) => {
 
     res.status(200).send(req.body)
 
-    // console.log(name);
+    if(!name || !email || !password){
+        res.status(400).send({
+            Error: 'Please fill all the values'
+        })
+    }
 
-    // if(!name || !email || !password){
-    //     res.status(400).send({
-    //         Error: 'Please fill all the values'
-    //     })
-    // }
-
-    // try{
-    //     let data = await validateUser({name, email, password})
-    //     const newUser = await User.Create({
-    //         name: data.name,
-    //         email: data.email,
-    //         password: data.password,
-    //         picture_id: 'kenil',
-    //         secureUrl: 'kenil'
-    //     })
+    try{
+        let data = await validateUser({name, email, password})
+        const newUser = await User.Create({
+            name: data.name,
+            email: data.email,
+            password: data.password,
+            picture_id: 'kenil',
+            secureUrl: 'kenil'
+        })
     //     // res.send(newUser)
-    //     cookieToken(newUser, res)
-    // }catch(e){
-    //     res.status(400).send(e.message)
-    // }
+        cookieToken(newUser, res)
+    }catch(e){
+        res.status(400).send(e.message)
+    }
 
 }
 
