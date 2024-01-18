@@ -9,7 +9,7 @@ exports.signup = async(req, res) => {
     let result
     // console.log(req);
     console.log(req.body);
-    res.send("hii from usercontroller")
+    // res.send("hii from usercontroller")
     // if(req.files){
     //     let file = req.files.photo
     //     result = await cloudinary.uploader.upload(file.tempFilePath, {
