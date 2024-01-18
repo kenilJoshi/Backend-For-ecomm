@@ -45,6 +45,26 @@ class User{
         }
     }
 
+    async createCompany(data){
+
+        try{
+
+            const statement = `insert into company (name)
+            values ($1)
+            RETURNING *;`
+
+            const result = await pool.query(statement, [data.name])
+
+            if(result.rows.length > 0){
+                return result.rows
+            }
+
+        }catch(e){
+            throw new Error(e)
+        }
+
+    }
+
     async findByEmail(email){
 
         try{

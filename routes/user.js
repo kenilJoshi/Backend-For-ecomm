@@ -1,9 +1,10 @@
 const express = require('express')
 const router = express.Router()
-const {signup, signin, logout, forgetPassword, passwordReset, addWishlist, wishlistwithProductdetail, getUserWishlist, getLoggedInUserDetail, removeWishlist, adminAllUser, adminSingleUser, adminDeleteUser} = require('../controllers/userControllers')
+const {signup, signin, logout, forgetPassword, passwordReset, addWishlist, createCompany, wishlistwithProductdetail, getUserWishlist, getLoggedInUserDetail, removeWishlist, adminAllUser, adminSingleUser, adminDeleteUser} = require('../controllers/userControllers')
 const {isLoggedIn, customRoles} = require('../middleware/authMiddleware')
 
 router.route('/signup').post(signup)
+router.route('/company').post(createCompany)
 router.route('/signin').post(signin)
 router.route('/logout').get(logout)
 router.route('/forgetPassword').post(forgetPassword)

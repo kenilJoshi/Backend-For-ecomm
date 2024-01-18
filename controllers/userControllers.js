@@ -46,6 +46,20 @@ exports.signup = async(req, res) => {
 
 }
 
+exports.createCompany = async(req, res) => {
+    try{
+        
+        let data = req.body
+
+        const newCompany = await User.createCompany(data)
+
+        res.status(200).send(newCompany)
+
+    }catch(e){
+        res.status(400).send(e.message)
+    }
+}
+
 exports.signin = async(req, res) => {
     const {email, password} = req.body
 
