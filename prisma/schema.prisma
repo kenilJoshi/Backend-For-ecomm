@@ -19,7 +19,7 @@ model user_profile {
   forgot_password_token String @default("")
   forgot_password_expiry DateTime  @default(now()) @db.Timestamp(6)
   role String @default("user")
-  profile   profile?
+  profile   profile[]
   orders     orders[]
   wishlist   wishlist[]
   createdAt DateTime  @default(now()) @db.Timestamp(6)

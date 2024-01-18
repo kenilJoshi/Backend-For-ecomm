@@ -8,7 +8,7 @@ const {Pool, Client} = require('pg')
 //   host: process.env.DATABASE_HOST
 // }
 
-const connectionString = process.env.DATABASE_URL;
+const connectionString = process.env.POSTGRES_URL + "?sslmode=require";
 
 // Create a new client
 const pool = new Client({
