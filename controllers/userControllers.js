@@ -40,7 +40,7 @@ exports.signup = async(req, res) => {
         // res.send(newUser)
         cookieToken(newUser, res)
     }catch(e){
-        res.status(400).send(e)
+        res.status(400).send(e.message)
     }
 
 }
