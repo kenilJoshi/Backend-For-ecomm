@@ -20,7 +20,7 @@ exports.signup = async(req, res) => {
     // }
     
     // const {name, email, password, picture_id, secureUrl} = req.body
-    // const {name, email, password} = req.body
+    const {name, email, password} = req.body
 
     res.status(200).send(req.body)
 
