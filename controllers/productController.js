@@ -125,6 +125,7 @@ exports.insertProduct = async (req, res) => {
     let result
     console.log('result');
     if(req.files){
+        console.log(req.files);
         let file = req.files.photos
         result = await cloudinary.uploader.upload(file.tempFilePath, {
             folder: "users",
