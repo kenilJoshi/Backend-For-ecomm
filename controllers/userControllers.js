@@ -20,6 +20,9 @@ exports.signup = async(req, res) => {
     // }
     
     // const {name, email, password, picture_id, secureUrl} = req.body
+    const {name, email, password} = req.body
+
+    res.send("hii from usercontroller", {name, email, password})
 
     // console.log(name);
 
