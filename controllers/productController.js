@@ -126,36 +126,36 @@ exports.insertProduct = async (req, res) => {
     console.log('result');
     if(req.files){
         console.log(req.files);
-        // let file = req.files.photos
-        // result = await cloudinary.uploader.upload(file.tempFilePath, {
-        //     folder: "users",
-        //     width: 150,
-        //     crop: "scale"
-        // })
+        let file = req.files.photos
+        result = await cloudinary.uploader.upload(file.tempFilePath, {
+            folder: "users",
+            width: 150,
+            crop: "scale"
+        })
     }
 
-    // const {title, description, price, quantity, category_name} = req.body
+    const {title, description, price, quantity, category_name} = req.body
 
-    // if(!title || !description || !price || !quantity || !category_name){
-    //     res.status(400).json({
-    //         success: false,
-    //         message: 'Field shouldnt be kept empty'
-    //     })
-    // }
+    if(!title || !description || !price || !quantity || !category_name){
+        res.status(400).json({
+            success: false,
+            message: 'Field shouldnt be kept empty'
+        })
+    }
 
-    // try{
+    try{
         
-    //     const insertProduct = await Product.insertProduct({title, description, price, quantity, image: result.secure_url, picture_id: result.public_id, category_name})
+        const insertProduct = await Product.insertProduct({title, description, price, quantity, image: result.secure_url, picture_id: result.public_id, category_name})
 
-    //     res.status(200).json({
-    //         success: true,
-    //         message: 'Inserted Product',
-    //         insertProduct
-    //     })
+        res.status(200).json({
+            success: true,
+            message: 'Inserted Product',
+            insertProduct
+        })
 
-    // }catch(e){
-    //     res.status(400).send(e.message)
-    // }
+    }catch(e){
+        res.status(400).send(e.message)
+    }
 
 }
 
