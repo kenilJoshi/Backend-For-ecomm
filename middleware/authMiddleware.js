@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken')
 const User = require('../models/userModals')
 
 exports.isLoggedIn = async (req, res, next) => {
-    console.log('here in auth');
+    console.log(req.cookies.token);
 
     const token = req.cookies.token || req.header("Authorization").replace("Bearer ", "");
 
