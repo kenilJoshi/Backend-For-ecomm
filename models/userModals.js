@@ -49,7 +49,7 @@ class User{
 
         try{
 
-            const statement = `insert into company (name)
+            const statement = `insert into company (Name)
             values ($1)
             RETURNING *;`
 

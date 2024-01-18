@@ -52,6 +52,7 @@ exports.createCompany = async(req, res) => {
         let data = req.body
 
         const newCompany = await User.createCompany(data)
+        console.log(newCompany);
 
         res.status(200).send(newCompany)
 
