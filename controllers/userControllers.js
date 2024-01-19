@@ -198,7 +198,7 @@ exports.removeWishlist = async (req, res) => {
 exports.getUserWishlist = async(req, res) => {
     try{
         let userWishlist = await User.userWishlist(req.user.user_id)
-        
+        console.log(userWishlist); 
         if(userWishlist.length !== 0){
             res.status(200).json({
                 success: true,
