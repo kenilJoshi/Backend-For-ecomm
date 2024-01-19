@@ -204,6 +204,11 @@ exports.getUserWishlist = async(req, res) => {
                 success: true,
                 userWishlist
             })
+        }else{
+            res.status(200).json({
+                success: true,
+                userWishlist: []
+            })
         }
     }catch(e){
         res.status(400).send(e)
