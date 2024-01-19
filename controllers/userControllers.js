@@ -19,7 +19,7 @@ exports.signup = async(req, res) => {
     // }
     
     // const {name, email, password, picture_id, secureUrl} = req.body
-    const {name, email, password} = req.body
+    const {name, email, password, picture_id, secureUrl} = req.body
 
     // res.status(200).send(req.body)
 
@@ -35,8 +35,8 @@ exports.signup = async(req, res) => {
             name: data.name,
             email: data.email,
             password: data.password,
-            picture_id: 'kenil',
-            secureUrl: 'kenil'
+            picture_id: picture_id,
+            secureUrl: secureUrl
         })
     //     // res.send(newUser)
         cookieToken(newUser, res)
